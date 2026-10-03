@@ -10,7 +10,6 @@ A modern, high-performance **React + Vite** single-page application (SPA) featur
 - **Routing**: [React Router v7](https://reactrouter.com/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Package Manager**: [pnpm](https://pnpm.io/)
 
@@ -20,9 +19,8 @@ A modern, high-performance **React + Vite** single-page application (SPA) featur
 
 | Route | Name | Description |
 | :--- | :--- | :--- |
-| `/` | **Overview Hub** | Landing dashboard with cards linking to `/test` and `/ux` showcases. |
-| `/test` | **Trending Courses Stats** | Expandable course cards accordion (`All Courses`, `Upcoming Courses`, `Ongoing Courses`) with custom 150px numbers, animated floating sticker badges, and spring transitions. |
-| `/ux` | **Services & Projects Showcase** | Pixel-accurate replica of the Figma service inspect spec and UI screenshot: Oakes Grotesk typography, `Services` pill button, stacked core services (UI & UX, Development, Blockchain), 1012px draggable carousel with centered 132px "Drag" pill, proportional 7px progress bar, and 4 monochrome partner logos (Cloud Education, CMC, IT SNP, Zebec). |
+| `/ux` | **Services & Projects Showcase** | Pixel-accurate replica of the Figma service inspect spec and UI screenshot: Oakes Grotesk typography, `Services` pill button, stacked core services (UI & UX, Development, Blockchain), draggable carousel with centered "Drag" pill, proportional progress bar, and 4 monochrome partner logos (Cloud Education, CMC, IT SNP, Zebec). |
+| `/test` | **Trending Courses Stats** | Expandable course cards accordion (`All Courses`, `Upcoming Courses`, `Ongoing Courses`) with custom display numbers, animated floating sticker badges, vertical text flow on collapsed cards, and fluid spring transitions. |
 
 ---
 
@@ -39,7 +37,7 @@ pnpm install
 ```bash
 pnpm dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173/ux](http://localhost:5173/ux) or [http://localhost:5173/test](http://localhost:5173/test) in your browser.
 
 ### 3. Production Build
 
@@ -70,19 +68,14 @@ vrit-task-2/
     ├── index.css
     ├── lib/
     │   └── utils.ts
-    ├── components/
-    │   ├── common/
-    │   │   ├── navbar.tsx
-    │   │   └── animated-cards.tsx
-    │   ├── stats/
-    │   │   └── trending-courses-stats.tsx
-    │   ├── services/
-    │   │   ├── index.ts
-    │   │   └── services-showcase.tsx
-    │   └── ui/
-    │       └── button.tsx
     └── routes/
-        ├── home-page.tsx
-        ├── test-page.tsx
-        └── ux-page.tsx
+        ├── test/
+        │   ├── index.tsx
+        │   └── components/
+        │       ├── animated-cards.tsx
+        │       └── trending-courses-stats.tsx
+        └── ux/
+            ├── index.tsx
+            └── components/
+                └── services-showcase.tsx
 ```

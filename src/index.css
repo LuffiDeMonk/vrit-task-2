@@ -9,10 +9,19 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
   * {
     box-sizing: border-box;
   }
+
+  html,
   body {
+    color-scheme: light;
+    background-color: #ffffff;
+    color: #171717;
     font-family: var(--font-sans);
     margin: 0;
     padding: 0;
