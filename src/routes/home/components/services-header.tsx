@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface ServicesHeaderProps {
   headline?: React.ReactNode;
@@ -14,6 +15,16 @@ export default function ServicesHeader({
   onButtonClick,
   className,
 }: ServicesHeaderProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (onButtonClick) {
+      onButtonClick();
+    } else {
+      navigate("/explore");
+    }
+  };
+
   return (
     <div className={`flex flex-col items-start gap-8 sm:gap-10 lg:gap-[58px] max-w-[625px] ${className ?? ""}`}>
       <h1
@@ -34,7 +45,7 @@ export default function ServicesHeader({
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.96 }}
         type="button"
-        onClick={onButtonClick}
+        onClick={handleClick}
         className="inline-flex items-center justify-center px-5 py-3.5 h-[48px] rounded-[100px] bg-[#1253ED] hover:bg-[#0E46CB] active:bg-[#0A38A5] text-[#FAFAFA] font-semibold text-[16px] leading-[120%] shadow-xs transition-colors duration-200 cursor-pointer outline-hidden"
         style={{ fontFamily: "'Manrope', var(--font-sans), sans-serif" }}
       >
